@@ -1,7 +1,8 @@
 +++
 title = "Adore Dental Lab"
 description = ""
-date = "2017-11-12"
-lastmodifierdisplayname = "Naresh Rayapati"
+date = "2018-01-20"
+lastmodifierdisplayname = "Suresh"
 +++
 
+# Adore Dental Lab

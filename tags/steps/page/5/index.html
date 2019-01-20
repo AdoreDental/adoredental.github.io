@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2019-01-20T14:36:15 CST">
+<title>Steps :: </title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/adoredentail.github.io\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/tags/steps/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <p>Jenkins JIRA Pipeline Steps</p>
+
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/AdoreDental/adoredentail.github.io"  rel="noopener">
+                  <i class='fa fa-github'></i> Github repo
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/getting-started/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/getting-started/">Get started</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/getting-started/install/" class="dd-item">
+        <div>
+          <a href="/getting-started/install/">
+            Install
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/getting-started/config/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/getting-started/config/">Configuration</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/getting-started/config/authentication/" class="dd-item">
+        <div>
+          <a href="/getting-started/config/authentication/">
+            Authentication
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/getting-started/config/common/" class="dd-item">
+        <div>
+          <a href="/getting-started/config/common/">
+            Common Config
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/getting-started/config/script/" class="dd-item">
+        <div>
+          <a href="/getting-started/config/script/">
+            Jenkins Script
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/getting-started/examples/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/getting-started/examples/">Examples</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/getting-started/examples/new_fix_version/" class="dd-item">
+        <div>
+          <a href="/getting-started/examples/new_fix_version/">
+            Create New Fix Version
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/getting-started/examples/append_fix_version/" class="dd-item">
+        <div>
+          <a href="/getting-started/examples/append_fix_version/">
+            Append Fix Version
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/getting-started/examples/release_project/" class="dd-item">
+        <div>
+          <a href="/getting-started/examples/release_project/">
+            Releasing a Project?
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/steps/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/steps/">Pipeline Steps</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/steps/admin/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/steps/admin/">Admin</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/steps/admin/jira_server_info/" class="dd-item">
+        <div>
+          <a href="/steps/admin/jira_server_info/">
+            Server Info
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/steps/attachment/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/steps/attachment/">Attachment</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/steps/attachment/jira_upload_attachment/" class="dd-item">
+        <div>
+          <a href="/steps/attachment/jira_upload_attachment/">
+            UploadAttachment
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/attachment/jira_get_attachment_info/" class="dd-item">
+        <div>
+          <a href="/steps/attachment/jira_get_attachment_info/">
+            GetAttachmentInfo
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/attachment/jira_download_attachment/" class="dd-item">
+        <div>
+          <a href="/steps/attachment/jira_download_attachment/">
+            DownloadAttachment
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/attachment/jira_delete_attachment/" class="dd-item">
+        <div>
+          <a href="/steps/attachment/jira_delete_attachment/">
+            DeleteAttachment
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/steps/comment/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/steps/comment/">Comment</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/steps/comment/jira_get_comment/" class="dd-item">
+        <div>
+          <a href="/steps/comment/jira_get_comment/">
+            GetComment
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/comment/jira_get_comments/" class="dd-item">
+        <div>
+          <a href="/steps/comment/jira_get_comments/">
+            GetComments
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/comment/jira_add_comment/" class="dd-item">
+        <div>
+          <a href="/steps/comment/jira_add_comment/">
+            AddComment
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/comment/jira_edit_comment/" class="dd-item">
+        <div>
+          <a href="/steps/comment/jira_edit_comment/">
+            EditComment
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/steps/component/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/steps/component/">Component</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/steps/component/jira_get_component/" class="dd-item">
+        <div>
+          <a href="/steps/component/jira_get_component/">
+            GetComponent
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/component/jira_new_component/" class="dd-item">
+        <div>
+          <a href="/steps/component/jira_new_component/">
+            NewComponent
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/component/jira_edit_component/" class="dd-item">
+        <div>
+          <a href="/steps/component/jira_edit_component/">
+            EditComponent
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/component/jira_get_component_issue_count/" class="dd-item">
+        <div>
+          <a href="/steps/component/jira_get_component_issue_count/">
+            GetComponentIssueCount
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/steps/issue/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/steps/issue/">Issue</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/steps/issue/jira_get_fields/" class="dd-item">
+        <div>
+          <a href="/steps/issue/jira_get_fields/">
+            GetFields
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issue/jira_new_issue/" class="dd-item">
+        <div>
+          <a href="/steps/issue/jira_new_issue/">
+            NewIssue
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issue/jira_new_issues/" class="dd-item">
+        <div>
+          <a href="/steps/issue/jira_new_issues/">
+            NewIssues
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issue/jira_assign_issue/" class="dd-item">
+        <div>
+          <a href="/steps/issue/jira_assign_issue/">
+            AssignIssue
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issue/jira_get_issue/" class="dd-item">
+        <div>
+          <a href="/steps/issue/jira_get_issue/">
+            GetIssue
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issue/jira_edit_issue/" class="dd-item">
+        <div>
+          <a href="/steps/issue/jira_edit_issue/">
+            EditIssue
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issue/jira_get_issue_transitions/" class="dd-item">
+        <div>
+          <a href="/steps/issue/jira_get_issue_transitions/">
+            GetIssueTransitions
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issue/jira_notify_issue/" class="dd-item">
+        <div>
+          <a href="/steps/issue/jira_notify_issue/">
+            NotifyIssue
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issue/jira_transition_issue/" class="dd-item">
+        <div>
+          <a href="/steps/issue/jira_transition_issue/">
+            TransitionIssue
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/steps/issuelink/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/steps/issuelink/">Issue Link</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/steps/issuelink/jira_get_issuelink/" class="dd-item">
+        <div>
+          <a href="/steps/issuelink/jira_get_issuelink/">
+            GetIssueLink
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issuelink/jira_get_issue_link_types/" class="dd-item">
+        <div>
+          <a href="/steps/issuelink/jira_get_issue_link_types/">
+            GetIssueLinkTypes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issuelink/jira_get_remote_issuelink/" class="dd-item">
+        <div>
+          <a href="/steps/issuelink/jira_get_remote_issuelink/">
+            GetRemoteIssueLink
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issuelink/jira_get_remote_issuelinks/" class="dd-item">
+        <div>
+          <a href="/steps/issuelink/jira_get_remote_issuelinks/">
+            GetRemoteIssueLinks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issuelink/jira_new_remote_issuelink/" class="dd-item">
+        <div>
+          <a href="/steps/issuelink/jira_new_remote_issuelink/">
+            NewRemoteIssueLink
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issuelink/jira_link_issues/" class="dd-item">
+        <div>
+          <a href="/steps/issuelink/jira_link_issues/">
+            LinkIssues
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issuelink/jira_delete_issuelink/" class="dd-item">
+        <div>
+          <a href="/steps/issuelink/jira_delete_issuelink/">
+            DeleteIssueLink
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issuelink/jira_delete_remote_issuelink/" class="dd-item">
+        <div>
+          <a href="/steps/issuelink/jira_delete_remote_issuelink/">
+            DeleteRemoteIssueLink
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/issuelink/jira_delete_remote_issuelinks/" class="dd-item">
+        <div>
+          <a href="/steps/issuelink/jira_delete_remote_issuelinks/">
+            DeleteRemoteIssueLinks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/steps/project/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/steps/project/">Project</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/steps/project/jira_get_project/" class="dd-item">
+        <div>
+          <a href="/steps/project/jira_get_project/">
+            GetProject
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/project/jira_get_projects/" class="dd-item">
+        <div>
+          <a href="/steps/project/jira_get_projects/">
+            GetProjects
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/project/jira_get_project_components/" class="dd-item">
+        <div>
+          <a href="/steps/project/jira_get_project_components/">
+            GetProjectComponents
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/project/jira_get_project_statuses/" class="dd-item">
+        <div>
+          <a href="/steps/project/jira_get_project_statuses/">
+            GetProjectStatuses
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/project/jira_get_project_versions/" class="dd-item">
+        <div>
+          <a href="/steps/project/jira_get_project_versions/">
+            GetProjectVersions
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/steps/search/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/steps/search/">Search</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/steps/search/jira_jql_search/" class="dd-item">
+        <div>
+          <a href="/steps/search/jira_jql_search/">
+            JqlSearch
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/steps/user/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/steps/user/">User</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/steps/user/jira_user_search/" class="dd-item">
+        <div>
+          <a href="/steps/user/jira_user_search/">
+            UserSearch
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/user/jira_assignable_user_search/" class="dd-item">
+        <div>
+          <a href="/steps/user/jira_assignable_user_search/">
+            AssignableUserSearch
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/steps/version/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/steps/version/">Version</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/steps/version/jira_new_version/" class="dd-item">
+        <div>
+          <a href="/steps/version/jira_new_version/">
+            NewVersion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/version/jira_get_version/" class="dd-item">
+        <div>
+          <a href="/steps/version/jira_get_version/">
+            GetVersion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/version/jira_edit_version/" class="dd-item">
+        <div>
+          <a href="/steps/version/jira_edit_version/">
+            EditVersion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/steps/watcher/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/steps/watcher/">Watcher</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/steps/watcher/jira_get_issue_watches/" class="dd-item">
+        <div>
+          <a href="/steps/watcher/jira_get_issue_watches/">
+            GetIssueWatches
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/steps/watcher/jira_add_watcher/" class="dd-item">
+        <div>
+          <a href="/steps/watcher/jira_add_watcher/">
+            AddWatcher
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/getting-started/" >
+   Get started</option> 
+      <option value="/getting-started/install/" >- Install</option>
+    <option value="/getting-started/config/" >
+  - 
+   Configuration</option>
+    <option value="/getting-started/examples/" >
+  - 
+   Examples</option>
+  
+    <option value="/steps/" >
+   Pipeline Steps</option> 
+    <option value="/steps/admin/" >
+  - 
+   Admin</option>
+    <option value="/steps/attachment/" >
+  - 
+   Attachment</option>
+    <option value="/steps/comment/" >
+  - 
+   Comment</option>
+    <option value="/steps/component/" >
+  - 
+   Component</option>
+    <option value="/steps/issue/" >
+  - 
+   Issue</option>
+    <option value="/steps/issuelink/" >
+  - 
+   Issue Link</option>
+    <option value="/steps/project/" >
+  - 
+   Project</option>
+    <option value="/steps/search/" >
+  - 
+   Search</option>
+    <option value="/steps/user/" >
+  - 
+   User</option>
+    <option value="/steps/version/" >
+  - 
+   Version</option>
+    <option value="/steps/watcher/" >
+  - 
+   Watcher</option>
+  
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/adoredentail.github.io\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+    
+
+    <h1>Steps</h1>
+    
+    
+    
+
+
+
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/tags/steps/page/4/">&larr; Previous Pages</a>
+	
+	<span class="page-number">Page 5 of 5</span>
+	
+</nav>
+
+</div>
+
+
+   <article class="post steps">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/steps/issue/jira_new_issue/">NewIssue</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>jiraNewIssue Creates new issue based on given input, which should have some minimal information on that object.
+Input  issue - issue to be created. site - Optional, default: JIRA_SITE environment variable. failOnError - Optional. default: true. auditLog - Optional. default: true. Append a panel to the comment with the build url and build user name.  It supports all the fields that any jira instance supports including custom fields. <a class="read-more" href="/steps/issue/jira_new_issue/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+            <i class='fa fa-user'></i> <a href="mailto:">Naresh Rayapati</a>  <i class='fa fa-calendar'></i> 12/11/2017
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://adoredentail.github.io/tags/steps/">steps</a>
+            
+                <a class="label label-default" href="https://adoredentail.github.io/tags/issue/">issue</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post steps">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/steps/issuelink/jira_new_remote_issuelink/">NewRemoteIssueLink</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>jiraNewRemoteIssueLink This step creates a new remote link to a particular issue.
+Input  idOrKey - issue id or key. remoteLink - remote link. site - Optional, default: JIRA_SITE environment variable. failOnError - Optional. default: true.  It supports all the fields that any jira instance supports including custom fields. For more information about all available input fields, please refer to the JIRA API documentation depending on your JIRA version. <a class="read-more" href="/steps/issuelink/jira_new_remote_issuelink/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+            <i class='fa fa-user'></i> <a href="mailto:">Naresh Rayapati</a>  <i class='fa fa-calendar'></i> 12/11/2017
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://adoredentail.github.io/tags/steps/">steps</a>
+            
+                <a class="label label-default" href="https://adoredentail.github.io/tags/issue/">issue</a>
+            
+                <a class="label label-default" href="https://adoredentail.github.io/tags/issuelink/">issuelink</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post steps">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/steps/issue/jira_notify_issue/">NotifyIssue</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>jiraNotifyIssue This step notifies users (like watchers, assignee and so on..) of a particular issue.
+Input  idOrKey - Issue id or key. notify - more info about whom should we notify and so on. site - Optional, default: JIRA_SITE environment variable. failOnError - Optional. default: true.  It supports all the fields that any jira instance supports including custom fields. For more information about all available input fields, please refer to the JIRA API documentation depending on your JIRA version. <a class="read-more" href="/steps/issue/jira_notify_issue/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+            <i class='fa fa-user'></i> <a href="mailto:">Naresh Rayapati</a>  <i class='fa fa-calendar'></i> 12/11/2017
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://adoredentail.github.io/tags/steps/">steps</a>
+            
+                <a class="label label-default" href="https://adoredentail.github.io/tags/issue/">issue</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post steps">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/steps/issue/jira_transition_issue/">TransitionIssue</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>jiraTransitionIssue This step transitions a particular issue in the JIRA site.
+Input  idOrKey - Issue id or key. input - comment, supports jira wiki formatting. site - Optional, default: JIRA_SITE environment variable. failOnError - Optional. default: true.  It supports all the fields that any jira instance supports including custom fields. For more information about all available input fields, please refer to the JIRA API documentation depending on your JIRA version. <a class="read-more" href="/steps/issue/jira_transition_issue/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+            <i class='fa fa-user'></i> <a href="mailto:">Naresh Rayapati</a>  <i class='fa fa-calendar'></i> 12/11/2017
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://adoredentail.github.io/tags/steps/">steps</a>
+            
+                <a class="label label-default" href="https://adoredentail.github.io/tags/issue/">issue</a>
+            
+        
+
+    </footer>
+</article>
+
+
+<div style="margin-bottom:2rem"></div>
+
+<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/tags/steps/page/4/">&larr; Previous Pages</a>
+	
+	<span class="page-number">Page 5 of 5</span>
+	
+</nav>
+
+
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/steps/watcher/jira_add_watcher/" title="AddWatcher"> <i class="fa fa-chevron-left"></i><label>AddWatcher</label></a>
+    <a class="nav nav-next" href="/getting-started/" title="Get started" style="margin-right: 0px;"><label>Get started</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 12/11/2017
+    </div>
+    
+
+    
+    <div class="github-link">
+      <a href="https://adoredentail.github.io/edit/master/hugo/content/" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+    <p><center> Copyright © 2017-2018 Naresh Rayapati. </center></p>
+
+  
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>
