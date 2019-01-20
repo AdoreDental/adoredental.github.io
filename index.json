@@ -375,7 +375,7 @@
 	"title": "Issue Link",
 	"tags": [],
 	"description": "",
-	"content": " IssueLink Steps  GetIssueLink     GetIssueLinkTypes     GetRemoteIssueLink     GetRemoteIssueLinks     NewRemoteIssueLink     LinkIssues     DeleteIssueLink     DeleteRemoteIssueLink     DeleteRemoteIssueLinks     "
+	"content": " IssueLink Steps  GetIssueLink     GetIssueLinkTypes     GetRemoteIssueLink     GetRemoteIssueLinks     NewRemoteIssueLink     LinkIssues    UploadAttachment   Server Info   Authentication   Create New Fix Version   GetComment   GetComponent   GetFields   GetIssueLink   GetIssueWatches   GetProject   JqlSearch   NewVersion   UserSearch   Install   GetAttachmentInfo   AddWatcher   Append Fix Version   AssignableUserSearch   Common Config   GetComments   GetIssueLinkTypes   GetProjects   GetVersion   NewComponent   NewIssue   DownloadAttachment   AddComment   EditComponent   EditVersion   GetProjectComponents   GetRemoteIssueLink   Jenkins Script   NewIssues   Releasing a Project?   DeleteAttachment   AssignIssue   EditComment   GetComponentIssueCount   GetIssue   GetProjectStatuses   GetRemoteIssueLinks   GetProjectVersions   NewRemoteIssueLink   EditIssue   LinkIssues   DeleteIssueLink   GetIssueTransitions   DeleteRemoteIssueLink   NotifyIssue   DeleteRemoteIssueLinks   TransitionIssue   Change Log   Contributing   Terms and Privacy Policy   header       DeleteIssueLink     DeleteRemoteIssueLink     DeleteRemoteIssueLinks     "
 },
 {
 	"uri": "https://adoredentail.github.io/steps/issuelink/jira_link_issues/",
