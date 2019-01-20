@@ -1,0 +1,24 @@
+baseURL = "https://adoredentail.github.io/"
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+theme = "docdock"
+publishDir = "docs"
+
+[params]
+title = "Adore Dental Lab"
+editURL = "https://adoredentail.github.io/edit/master/hugo/content/"
+noHomeIcon = false # default is false
+noSearch = false # default is false
+showVisitedLinks = true # default is false
+themeVariant = "" # choose theme variant "green", "gold" , "gray", "blue" (default)
+ordersectionsby = "weight" # ordersectionsby = "title"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[[menu.shortcuts]]
+pre = "<h3>More</h3>"
+name = "<i class='fa fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/AdoreDental/adoredentail.github.io"
+weight = 10
