@@ -2,7 +2,7 @@ baseURL = "https://adoredentail.github.io/"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
 theme = "docdock"
-publishDir = "docs"
+publishDir = "."
 
 [params]
 title = "Adore Dental Lab"
